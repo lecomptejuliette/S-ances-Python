@@ -1,0 +1,27 @@
+// Catégorisation des îles
+digraph Categorisation_Simple {
+	rankdir=TB
+	node [fillcolor=lightblue shape=box style="rounded,filled"]
+	A [label="DÉBUT" fillcolor=lightgreen shape=ellipse]
+	B [label="Charger Surface (km²)"]
+	C [label="Initialiser compteurs
+pour 8 catégories"]
+	D [label="Pour chaque île" fillcolor=lightyellow shape=parallelogram]
+	E [label="Tester la surface
+contre les intervalles" fillcolor=orange shape=diamond]
+	F [label="Incrémenter le compteur
+de la catégorie appropriée"]
+	G [label="Fin de boucle?" fillcolor=orange shape=diamond]
+	H [label="Afficher les résultats"]
+	I [label=FIN fillcolor=lightcoral shape=ellipse]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F
+	F -> G
+	G -> D [label="NON
+(île suivante)"]
+	G -> H [label=OUI]
+	H -> I
+}
